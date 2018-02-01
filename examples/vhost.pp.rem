@@ -1,0 +1,24 @@
+class profile::apache::vhost (
+  $port = 80,
+  $server_root = '/var/www',
+) {'nicklinsky1.mylabserver.com':
+     port    => $port,
+     docroot => $docroot,
+}
+
+class {'::apache::vhost':
+  default_vhost => $default_vhost,
+  server_root   => $server_root,
+  port          => $port
+}
+
+
+file { '/var/www':
+  ensure  => directory,
+}
+
+file { '/var/www/index.html':
+  ensure  => file,
+  content => 'Test page. This is a test',
+}
+

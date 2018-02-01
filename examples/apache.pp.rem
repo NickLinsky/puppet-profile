@@ -1,0 +1,11 @@
+class profile::apache(
+  Boolean $default_vhost = false,
+  String $server_root = '/var/www/',
+) {
+
+  class {'apache':
+    default_vhost => $default_vhost,
+    server_root   => $server_root,
+  }
+}
+
