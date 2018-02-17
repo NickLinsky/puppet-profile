@@ -1,6 +1,6 @@
 class profile::apache(
   Boolean $default_vhost = false,
-  Hash $apache_vhost_servers,
+  #Hash $apache_vhost_servers,
   #String docroot = '/var/www/',
   #Integer $port = 80,
 ) {
@@ -9,11 +9,11 @@ class profile::apache(
     default_vhost => $default_vhost,
   }
 
-  create_resources(::apache::vhost, $apache_vhost_servers)
-  #::apache::vhost{'homepages':
-  #  port => $port,
-  #  docroot => $docroot
-  #}
+  #create_resources(::apache::vhost, $apache_vhost_servers)
+  ::apache::vhost{'homepages':
+    port => $port,
+    docroot => $docroot
+  }
 
   file {'/var/www':
     ensure => directory,
