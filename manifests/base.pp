@@ -1,4 +1,3 @@
-meow
 class profile::base (
   $ntp_servers = [
     '0.ubunto.pool.ntp.org',
@@ -7,9 +6,9 @@ class profile::base (
     '3.ubunto.pool.ntp.org',
   ],
 ) {
-  include ::ssh
   notify { "Notify: Gets into profile::base":}
   notice ( "Notice: Gets into profile::base")
+  include ::ssh
   #class {'::ntp': 
   #  servers => $ntp_servers,
   #}
