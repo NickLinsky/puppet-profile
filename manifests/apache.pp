@@ -1,3 +1,4 @@
+ruff
 class profile::apache(
   Boolean $default_vhost = false,
   #Hash $apache_vhost_servers,

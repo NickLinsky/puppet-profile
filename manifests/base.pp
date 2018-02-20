@@ -1,3 +1,4 @@
+meow
 class profile::base (
   $ntp_servers = [
     '0.ubunto.pool.ntp.org',
