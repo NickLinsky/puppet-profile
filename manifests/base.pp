@@ -8,7 +8,9 @@ class profile::base (
 ) {
   notify { "Notify: Gets into profile::base":}
   notice ( "Notice: Gets into profile::base")
-  include ::ssh
+  class { 'ssh':
+  }
+  #include ::ssh
   #class {'::ntp': 
   #  servers => $ntp_servers,
   #}
