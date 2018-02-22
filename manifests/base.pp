@@ -9,6 +9,7 @@ class profile::base (
   notify { "Notify: Gets into profile::base":}
   notice ( "Notice: Gets into profile::base")
   class { 'ssh':
+    port => 22,
   }
   #include ::ssh
   #class {'::ntp': 
